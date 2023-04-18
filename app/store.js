@@ -9,9 +9,10 @@ const { reducer: cakeReducers } = cakeSlice;
 const { reducer: iceCreamReducers } = iceCreamSlice;
 
 
-const middleware = [];
-middleware.push(createLogger());
-const enhancers = [...middleware];
+// This code for enhancers
+// const middleware = [];
+// middleware.push(createLogger());
+// const enhancers = [...middleware];
 
 
 const store = configureStore({
@@ -19,7 +20,8 @@ const store = configureStore({
         cake: cakeReducers,
         icecream: iceCreamReducers,
     },
-    middleware: enhancers,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(createLogger()),
+    // middleware: enhancers,
     // middleware: (getDefaultMiddleware) => {
     //     let middleware = getDefaultMiddleware({
     //         serializableCheck: false,
@@ -29,5 +31,4 @@ const store = configureStore({
     // },
 })
 
-// module.exports = store;
 export default store;
