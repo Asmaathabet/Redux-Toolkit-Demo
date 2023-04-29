@@ -1,6 +1,7 @@
 import store from "./app/store.js"
 import cakeSlice from "./features/cake/cakeSlice.js"
 import iceCreamSlice from "./features/icecream/iceCreamSlice.js"
+import userSlice, { fetchUsers } from "./features/users/userSlice.js"
 
 const { actions: cakeActions } = cakeSlice;
 const { actions: iceCreamActions } = iceCreamSlice;
@@ -10,15 +11,18 @@ const unsubscribe = store.subscribe(() => {
     console.log("updated state", store.getState())
 })
 
+
+store.dispatch(fetchUsers())
+
 // const cakeActions = cakeSlice.cakeActions
-store.dispatch(cakeActions.ordered())
-store.dispatch(cakeActions.ordered())
-store.dispatch(cakeActions.ordered())
-store.dispatch(cakeActions.restocked(3))
+// store.dispatch(cakeActions.ordered())
+// store.dispatch(cakeActions.ordered())
+// store.dispatch(cakeActions.ordered())
+// store.dispatch(cakeActions.restocked(3))
 
-store.dispatch(iceCreamActions.ordered())
-store.dispatch(iceCreamActions.ordered())
-store.dispatch(iceCreamActions.restocked(2))
+// store.dispatch(iceCreamActions.ordered())
+// store.dispatch(iceCreamActions.ordered())
+// store.dispatch(iceCreamActions.restocked(2))
 
 
-unsubscribe()
+// unsubscribe()

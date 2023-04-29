@@ -1,12 +1,14 @@
 import toolkit from "@reduxjs/toolkit";
 import cakeSlice from "../features/cake/cakeSlice.js";
 import iceCreamSlice from "../features/icecream/iceCreamSlice.js";
+import userSlice from "../features/users/userSlice.js";
 // import logger from 'redux-logger';
 
 const { configureStore } = toolkit;
 // const { createLogger } = logger;
 const { reducer: cakeReducers } = cakeSlice;
 const { reducer: iceCreamReducers } = iceCreamSlice;
+const { reducer: userReducer } = userSlice;
 
 
 // This code for enhancers
@@ -19,6 +21,7 @@ const store = configureStore({
     reducer: {
         cake: cakeReducers,
         icecream: iceCreamReducers,
+        user: userReducer,
     },
     // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(createLogger()),
     // middleware: enhancers,
