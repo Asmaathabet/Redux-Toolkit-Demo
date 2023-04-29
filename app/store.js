@@ -1,10 +1,10 @@
 import toolkit from "@reduxjs/toolkit";
 import cakeSlice from "../features/cake/cakeSlice.js";
 import iceCreamSlice from "../features/icecream/iceCreamSlice.js";
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 const { configureStore } = toolkit;
-const { createLogger } = logger;
+// const { createLogger } = logger;
 const { reducer: cakeReducers } = cakeSlice;
 const { reducer: iceCreamReducers } = iceCreamSlice;
 
@@ -20,7 +20,7 @@ const store = configureStore({
         cake: cakeReducers,
         icecream: iceCreamReducers,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(createLogger()),
+    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(createLogger()),
     // middleware: enhancers,
     // middleware: (getDefaultMiddleware) => {
     //     let middleware = getDefaultMiddleware({
